@@ -26,7 +26,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun BooksScreen() {
-    // Simulated book data (static list of 10 books)
+
     val books = listOf(
         Book(1, "To Kill a Mockingbird", "Harper Lee", "A novel about racial injustice and moral growth in the American South.", "https://covers.openlibrary.org/b/id/8231990-L.jpg"),
         Book(2, "1984", "George Orwell", "A dystopian novel about totalitarianism, surveillance, and censorship.", "https://covers.openlibrary.org/b/id/8575111-L.jpg"),
@@ -44,10 +44,10 @@ fun BooksScreen() {
     var isLoading by remember { mutableStateOf(true) }
     var bookList by remember { mutableStateOf<List<Book>>(emptyList()) }
 
-    // Simulate a loading delay
+   
     LaunchedEffect(Unit) {
-        delay(2000) // Simulate a network delay
-        bookList = books // Replace with your actual data
+        delay(2000) 
+        bookList = books 
         isLoading = false
     }
 
