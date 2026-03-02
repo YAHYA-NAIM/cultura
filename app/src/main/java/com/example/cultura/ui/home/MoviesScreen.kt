@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun MoviesScreen() {
-    // Sample movie data - replace with your actual data source
+
     val movies = listOf(
         Movie(1, "The Shawshank Redemption", "Two imprisoned men bond over a number of years...", "1994-09-23", "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"),
         Movie(2, "The Godfather", "The aging patriarch of an organized crime dynasty...", "1972-03-14", "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"),
@@ -35,14 +35,14 @@ fun MoviesScreen() {
     )
 
 
-    // State for loading simulation
+
     var isLoading by remember { mutableStateOf(true) }
     var movieList by remember { mutableStateOf<List<Movie>>(emptyList()) }
 
-    // Simulate API call with delay
+  
     LaunchedEffect(Unit) {
-        delay(2000) // Simulate network delay
-        movieList = movies // Replace with API data
+        delay(2000)
+        movieList = movies 
         isLoading = false
     }
 
@@ -55,7 +55,7 @@ fun MoviesScreen() {
         )
 
         if (isLoading) {
-            // Show loading spinner
+            
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
